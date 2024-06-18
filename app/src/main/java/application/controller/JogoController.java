@@ -32,12 +32,14 @@ public class JogoController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(
         @RequestParam("titulo") String titulo,
-        @RequestParam("genero") long generoId
+        @RequestParam("genero") long generoId,
+        @RequestParam("multiplayer") long multiplayer
     ) {
         Optional<Genero> resultGenero = generoRepo.findById(generoId);
         if(resultGenero.isPresent()) {
             Jogo jogo = new Jogo();
             jogo.setTitulo(titulo);
+            jogo.setMultiplayer(multiplayer);
             jogo.setGenero(resultGenero.get());
 
             jogoRepo.save(jogo);
@@ -60,13 +62,16 @@ public class JogoController {
     public String update(
         @RequestParam("id") long id,
         @RequestParam("titulo") String titulo,
-        @RequestParam("genero") long generoId
+        @RequestParam("genero") long generoId,
+        @RequestParam("multiplayer") long multiplayer
+
     ) {
         Optional<Jogo> resultJogo = jogoRepo.findById(id);
         if(resultJogo.isPresent()) {
             Optional<Genero> resultGenero = generoRepo.findById(generoId);
             if(resultGenero.isPresent()) {
                 resultJogo.get().setTitulo(titulo);
+                resultJogo.get().setMultiplayer(multiplayer);
                 resultJogo.get().setGenero(resultGenero.get());
 
                 jogoRepo.save(resultJogo.get());

@@ -24,6 +24,10 @@
                         </c:forEach>
                     </select>
                 </div>
+                <div>
+                    <label class="form-label">Multiplayer:</label>
+                    <input type="text" name="multiplayer" class="form-control" value="${jogo.multiplayer}" />
+                </div>
 
                 <br />
                 <a href="/jogos/list" class="btn btn-secondary">Voltar</a>

@@ -16,6 +16,7 @@
                     <th>Id</th>
                     <th>Titulo</th>
                     <th>Gênero</th>
+                    <th>Multiplayer</th>
                     <th>&nbsp;</th>
                 </tr>
                 <c:forEach var="item" items="${jogos}">
@@ -23,6 +24,7 @@
                         <td>${item.id}</td>
                         <td>${item.titulo}</td>
                         <td>${item.genero.nome}</td>
+                        <td>${item.multiplayer}</td>
                         <td>
                             <a href="/jogos/update?id=${item.id}" class="btn btn-secondary">Editar</a>
                             <a href="/jogos/delete?id=${item.id}" class="btn btn-danger">Excluir</a>
