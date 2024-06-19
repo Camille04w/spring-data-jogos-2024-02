@@ -70,7 +70,6 @@ public class GeneroController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(@RequestParam("id") long id) {
         generoRepo.deleteById(id);
-
         return "redirect:/generos/list";
     }
 }
