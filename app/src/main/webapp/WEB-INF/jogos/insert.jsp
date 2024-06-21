@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <label class="form-label">Multiplayer:</label>
-                    <input type="number" name="multiplayer" class="form-control" />
+                    <input type="text" name="Multiplayer" class="form-control" />
                 </div>
 
                 <br />

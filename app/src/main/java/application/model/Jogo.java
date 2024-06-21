@@ -18,7 +18,7 @@ public class Jogo {
     @Column(nullable = false)
     private String titulo;
     @Column(nullable = false)
-    private long multiplayer;
+    private String multiplayer;
 
     @ManyToOne
     @JoinColumn(name = "id_genero", nullable = false)
@@ -48,11 +48,11 @@ public class Jogo {
         this.genero = genero;
     }
 
-    public long getMultiplayer() {
+    public String getMultiplayer() {
         return multiplayer;
     }
 
-    public void setMultiplayer(long multiplayer) {
+    public void setMultiplayer(String multiplayer) {
         this.multiplayer = multiplayer;
     }
     

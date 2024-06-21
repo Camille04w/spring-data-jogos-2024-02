@@ -33,7 +33,7 @@ public class JogoController {
     public String insert(
         @RequestParam("titulo") String titulo,
         @RequestParam("genero") long generoId,
-        @RequestParam("multiplayer") long multiplayer
+        @RequestParam("multiplayer") String multiplayer
     ) {
         Optional<Genero> resultGenero = generoRepo.findById(generoId);
         if(resultGenero.isPresent()) {
@@ -63,7 +63,7 @@ public class JogoController {
         @RequestParam("id") long id,
         @RequestParam("titulo") String titulo,
         @RequestParam("genero") long generoId,
-        @RequestParam("multiplayer") long multiplayer
+        @RequestParam("multiplayer") String multiplayer
 
     ) {
         Optional<Jogo> resultJogo = jogoRepo.findById(id);

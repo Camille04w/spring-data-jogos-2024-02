@@ -46,7 +46,8 @@ public class GeneroController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String update(@RequestParam("id") long id, @RequestParam("nome") String nome) {
+    public String update(@RequestParam("id") long id,
+     @RequestParam("nome") String nome) {
         Optional<Genero> result = generoRepo.findById(id);
         if(result.isPresent()) {
             result.get().setNome(nome);
